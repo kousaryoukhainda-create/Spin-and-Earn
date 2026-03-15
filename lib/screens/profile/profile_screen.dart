@@ -599,7 +599,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               ),
               _buildStatItem(
                 'Total Earnings',
-                '₹${(user.totalEarnings / 1000).toStringAsFixed(2)}',
+                '\$${(user.totalEarnings / 100000).toStringAsFixed(2)} USDT',
                 Icons.account_balance_wallet,
               ),
               _buildStatItem(
@@ -1545,7 +1545,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               '5.1 Spinning Limits: Users are limited to 5 spins per day.',
             ),
             _buildPolicyText(
-              '5.2 Minimum Withdrawal: The minimum amount for withdrawal is ₹50.',
+              '5.2 Minimum Withdrawal: The minimum amount for withdrawal is $1 USDT.',
             ),
             _buildPolicyText(
               '5.3 Withdrawal Processing: Withdrawals may take up to 7 business days to process.',
@@ -1556,7 +1556,7 @@ class _ProfileScreenState extends State<ProfileScreen>
 
             _buildPolicySectionTitle('6. Referral Program'),
             _buildPolicyText(
-              '6.1 Earnings: Users earn ₹2 for each new user they refer who signs up using their referral code.',
+              '6.1 Earnings: Users earn $0.01 USDT for each new user they refer who signs up using their referral code.',
             ),
             _buildPolicyText(
               '6.2 Validity: Referral rewards are credited only after the referred user completes at least one spin.',

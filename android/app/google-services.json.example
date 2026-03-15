@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
         "android_client_info": {
-          "package_name": "com.example.spin_to_earn"
+          "package_name": "com.ykapps.spin_and_earn"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "000000000000-xxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.spin_to_earn",
+            "package_name": "com.ykapps.spin_and_earn",
             "certificate_hash": "0000000000000000000000000000000000000000"
           }
         },

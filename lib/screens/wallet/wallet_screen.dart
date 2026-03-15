@@ -28,13 +28,13 @@ class _WalletScreenState extends State<WalletScreen>
   late AnimationController _animationController;
   late Animation<double> _animation;
 
-  // Predefined withdrawal amounts (in points, where 1000 points = ₹1)
+  // Predefined withdrawal amounts (in points, where 1000 points = $0.01 USDT)
   final List<int> _withdrawalAmounts = [
-    20000,
-    50000,
     100000,
-    200000,
-  ]; // ₹20, ₹50, ₹100, ₹200
+    500000,
+    1000000,
+    2000000,
+  ]; // $1, $5, $10, $20 USDT
 
   @override
   void initState() {
@@ -192,10 +192,10 @@ class _WalletScreenState extends State<WalletScreen>
                                 controller: _customAmountController,
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
-                                  labelText: 'Custom Amount (₹)',
-                                  hintText: 'Enter amount (Min ₹20)',
+                                  labelText: 'Custom Amount (USDT)',
+                                  hintText: 'Enter amount (Min $1)',
                                   prefixIcon: const Icon(
-                                    Icons.currency_rupee,
+                                    Icons.account_balance_wallet,
                                     color: AppTheme.primaryColor,
                                   ),
                                   border: OutlineInputBorder(
@@ -224,10 +224,10 @@ class _WalletScreenState extends State<WalletScreen>
                                     if (amount == null) {
                                       return 'Please enter a valid amount';
                                     }
-                                    if (amount < 20) {
-                                      return 'Minimum withdrawal is ₹20';
+                                    if (amount < 1) {
+                                      return 'Minimum withdrawal is $1 USDT';
                                     }
-                                    if (amount * 1000 > user.points) {
+                                    if (amount * 100000 > user.points) {
                                       return 'Insufficient points for this amount';
                                     }
                                   }
@@ -238,7 +238,7 @@ class _WalletScreenState extends State<WalletScreen>
 
                           const SizedBox(height: 20),
                           Text(
-                            'Minimum withdrawal amount: 20000 points (₹20)',
+                            'Minimum withdrawal amount: 100000 points ($1 USDT)',
                             style: TextStyle(
                               fontSize: 13,
                               fontStyle: FontStyle.italic,
@@ -252,7 +252,7 @@ class _WalletScreenState extends State<WalletScreen>
                             child: ElevatedButton(
                               onPressed:
                                   _isProcessing ||
-                                          user.points < 20000 ||
+                                          user.points < 100000 ||
                                           (_selectedAmount == 0 &&
                                               !_isCustomAmount)
                                       ? null
@@ -458,7 +458,7 @@ class _WalletScreenState extends State<WalletScreen>
                   return Transform.scale(
                     scale: 1.0 + (_animation.value * 0.05),
                     child: Text(
-                      '₹${(points / 1000).toStringAsFixed(2)}',
+                      '\$${(points / 100000).toStringAsFixed(2)} USDT',
                       style: const TextStyle(
                         fontSize: 34,
                         fontWeight: FontWeight.bold,
@@ -491,7 +491,7 @@ class _WalletScreenState extends State<WalletScreen>
                 Icon(Icons.info_outline, color: Colors.white70, size: 16),
                 SizedBox(width: 8),
                 Text(
-                  '1000 points = ₹1',
+                  '1000 points = \$0.01 USDT',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
@@ -559,7 +559,7 @@ class _WalletScreenState extends State<WalletScreen>
                   child: Column(
                     children: [
                       Text(
-                        '₹${amount ~/ 1000}',
+                        '\$${amount ~/ 100000} USDT',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -754,7 +754,7 @@ class _WalletScreenState extends State<WalletScreen>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '₹${(withdrawal.amount / 1000).toStringAsFixed(2)}',
+                                '\$${(withdrawal.amount / 100000).toStringAsFixed(2)} USDT',
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -1043,7 +1043,7 @@ class _WalletScreenState extends State<WalletScreen>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        '₹${(withdrawal.amount / 1000).toStringAsFixed(2)}',
+                        '\$${(withdrawal.amount / 100000).toStringAsFixed(2)} USDT',
                         style: TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.bold,
@@ -1226,16 +1226,16 @@ class _WalletScreenState extends State<WalletScreen>
 
     if (_isCustomAmount) {
       final customAmount = int.tryParse(_customAmountController.text);
-      if (customAmount == null || customAmount < 20) {
+      if (customAmount == null || customAmount < 1) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Minimum withdrawal amount is ₹20'),
+            content: Text('Minimum withdrawal amount is $1 USDT'),
             backgroundColor: Colors.red,
           ),
         );
         return;
       }
-      withdrawalAmount = customAmount * 1000; // Convert to points
+      withdrawalAmount = customAmount * 100000; // Convert to points
     }
 
     if (withdrawalAmount <= 0) {

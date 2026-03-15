@@ -221,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 ),
                               ),
                               Text(
-                                '₹${(dailyBonus / 1000).toStringAsFixed(2)}',
+                                '\$${(dailyBonus / 100000).toStringAsFixed(2)} USDT',
                                 style: const TextStyle(
                                   color: AppTheme.primaryColor,
                                   fontSize: 28,

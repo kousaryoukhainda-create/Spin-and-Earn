@@ -47,7 +47,7 @@ class FirestoreService {
   // Update user daily login and reset spins
   Future<int> processDailyLogin(String uid, DateTime lastLoginDate) async {
     if (isNewDay(lastLoginDate)) {
-      // Generate random daily bonus (₹1-₹3 = 1000-3000 points)
+      // Generate random daily bonus ($0.01-$0.03 USDT = 1000-3000 points)
       Random random = Random();
       int bonusPoints = (1 + random.nextInt(3)) * 1000;
 
@@ -179,13 +179,13 @@ class FirestoreService {
         'referralCodeApplied': true, // Keep this for backward compatibility
         'appliedReferralCodes': appliedCodes,
         'points': FieldValue.increment(
-          2000,
-        ), // Give ₹2 = 2000 points to the user
+          1000,
+        ), // Give $0.01 USDT = 1000 points to the user
       });
 
-      // Give ₹2 = 2000 points to the referrer as well
+      // Give $0.01 USDT = 1000 points to the referrer as well
       await _usersCollection.doc(referrerUid).update({
-        'points': FieldValue.increment(2000),
+        'points': FieldValue.increment(1000),
       });
 
       return true;
