@@ -28,14 +28,34 @@ android {
         targetSdk = 35  // Updated as per requirements
         versionCode = 1
         versionName = "1.0.0"
-        
+
         // Disable the AdServices manifest placeholder
         manifestPlaceholders["adServicesEnabled"] = false
+
+        // Split APKs by ABI for smaller downloads
+        ndk {
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a")
+        }
+    }
+
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("armeabi-v7a", "arm64-v8a")
+            isUniversalApk = false  // Set to true if you also want a universal APK
+        }
     }
 
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     
