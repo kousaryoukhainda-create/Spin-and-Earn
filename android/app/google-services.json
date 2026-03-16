@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "820394758020",
+    "project_id": "spin-and-earn-20aab",
+    "storage_bucket": "spin-and-earn-20aab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820394758020:android:9f8f1e6cba2cf8cdd397d1",
+        "android_client_info": {
+          "package_name": "com.ykapps.spin_and_earn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7vjF_gC-VVA9dUgo-Oq3fNrtyrglmZ3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
