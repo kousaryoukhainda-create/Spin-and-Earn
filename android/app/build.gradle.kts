@@ -33,15 +33,6 @@ android {
         manifestPlaceholders["adServicesEnabled"] = false
     }
 
-    splits {
-        abi {
-            isEnable = true
-            reset()
-            include("armeabi-v7a", "arm64-v8a")
-            isUniversalApk = false  // Set to true if you also want a universal APK
-        }
-    }
-
     buildTypes {
         release {
             signingConfig = signingConfigs.getByName("debug")
