@@ -7,7 +7,7 @@ import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import '../../models/user_model.dart';
 import '../../providers/user_provider.dart';
 import '../../services/ad_service.dart';
-import '../auth/login_screen.dart'; // Import for AppTheme
+import '../../theme/app_theme.dart';
 import '../home/home_screen.dart';
 
 class SpinScreen extends StatefulWidget {

@@ -6,7 +6,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../../providers/user_provider.dart';
 import '../../models/user_model.dart'; // Import UserModel
-import '../auth/login_screen.dart'; // Import for AppTheme
+import '../../theme/app_theme.dart';
 
 // Define the Achievement class to track user achievements
 class Achievement {

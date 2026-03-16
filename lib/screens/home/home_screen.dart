@@ -7,7 +7,7 @@ import '../../services/ad_service.dart';
 import '../spin/spin_screen.dart';
 import '../wallet/wallet_screen.dart';
 import '../profile/profile_screen.dart';
-import '../auth/login_screen.dart'; // Import for AppTheme
+import '../../theme/app_theme.dart';
 
 // Define our app theme colors
 class AppColors {

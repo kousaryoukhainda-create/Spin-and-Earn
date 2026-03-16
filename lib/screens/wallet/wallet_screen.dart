@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import '../../models/withdrawal_request_model.dart';
 import '../../providers/user_provider.dart';
 import '../../services/firestore_service.dart';
-import '../auth/login_screen.dart'; // Import for AppTheme
+import '../../theme/app_theme.dart';
 
 class WalletScreen extends StatefulWidget {
   const WalletScreen({super.key});

@@ -3,14 +3,7 @@ import 'dart:math' as math;
 import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-import '../../screens/auth/login_screen.dart'; // Import for AppTheme
-
-// Fallback colors in case AppTheme is not properly imported
-class _FallbackTheme {
-  static const Color primaryColor = Color(0xFF1E88E5); // Vibrant blue
-  static const Color secondaryColor = Color(0xFF26A69A); // Teal
-  static const Color accentColor = Color(0xFFFFB300); // Amber
-}
+import '../../theme/app_theme.dart';
 
 // Simple particle class to represent floating coins in the background
 class Particle {
