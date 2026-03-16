@@ -193,7 +193,7 @@ class _WalletScreenState extends State<WalletScreen>
                                 keyboardType: TextInputType.number,
                                 decoration: InputDecoration(
                                   labelText: 'Custom Amount (USDT)',
-                                  hintText: 'Enter amount (Min \\\$1)',
+                                  hintText: 'Enter amount (Min \$1)',
                                   prefixIcon: const Icon(
                                     Icons.account_balance_wallet,
                                     color: AppTheme.primaryColor,
@@ -225,7 +225,7 @@ class _WalletScreenState extends State<WalletScreen>
                                       return 'Please enter a valid amount';
                                     }
                                     if (amount < 1) {
-                                      return 'Minimum withdrawal is \\\$1 USDT';
+                                      return 'Minimum withdrawal is \$1 USDT';
                                     }
                                     if (amount * 100000 > user.points) {
                                       return 'Insufficient points for this amount';
@@ -238,7 +238,7 @@ class _WalletScreenState extends State<WalletScreen>
 
                           const SizedBox(height: 20),
                           Text(
-                            'Minimum withdrawal amount: 100000 points (\\$1 USDT)',
+                            'Minimum withdrawal amount: 100000 points (\$1 USDT)',
                             style: TextStyle(
                               fontSize: 13,
                               fontStyle: FontStyle.italic,
@@ -1229,7 +1229,7 @@ class _WalletScreenState extends State<WalletScreen>
       if (customAmount == null || customAmount < 1) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Minimum withdrawal amount is \\$1 USDT'),
+            content: Text('Minimum withdrawal amount is \$1 USDT'),
             backgroundColor: Colors.red,
           ),
         );
