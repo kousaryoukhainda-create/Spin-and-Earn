@@ -24,7 +24,7 @@ android {
         applicationId = "com.ykapps.spin_and_earn"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23  // Flutter minimum requirement
+        minSdk = 24  // Required by shared_preferences_android
         targetSdk = 35  // Updated as per requirements
         versionCode = 1
         versionName = "1.0.0"
