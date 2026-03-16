@@ -75,23 +75,11 @@ class _SplashScreenState extends State<SplashScreen>
   // Particles for background animation
   final List<Particle> _particles = [];
 
-  // Get the primaryColor (with fallback if AppTheme is not available)
-  Color get primaryColor {
-    try {
-      return AppTheme.primaryColor;
-    } catch (e) {
-      return _FallbackTheme.primaryColor;
-    }
-  }
+  // Get the primaryColor
+  Color get primaryColor => AppTheme.primaryColor;
 
-  // Get the accentColor (with fallback if AppTheme is not available)
-  Color get accentColor {
-    try {
-      return AppTheme.accentColor;
-    } catch (e) {
-      return _FallbackTheme.accentColor;
-    }
-  }
+  // Get the accentColor
+  Color get accentColor => AppTheme.accentColor;
 
   @override
   void initState() {
