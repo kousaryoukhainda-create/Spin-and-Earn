@@ -31,11 +31,6 @@ android {
 
         // Disable the AdServices manifest placeholder
         manifestPlaceholders["adServicesEnabled"] = false
-
-        // Split APKs by ABI for smaller downloads
-        ndk {
-            abiFilters += listOf("armeabi-v7a", "arm64-v8a")
-        }
     }
 
     splits {
